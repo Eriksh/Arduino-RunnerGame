@@ -10,7 +10,7 @@ Installing & Running
 ---
 1. Download "Runner.ino" and compile/upload it onto your chip.
 2. Setup an arduino circuit similar to what you see below
-  ![RunnerCircuit.png](/RunnerCircuit.png?raw=true "Optional Title")
+  ![RunnerCircuit.png](/Circuit.png?raw=true "Arduino Circuit")
 
 Game Settings
 ---
