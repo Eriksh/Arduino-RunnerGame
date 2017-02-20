@@ -15,7 +15,7 @@ Installing & Running
 Game Settings
 ---
 * difficulty     - changes game difficulty by decreasing game refresh time
-* min_wall_delay - minimum delay before the next wall
+* min_wall_delay - minimum number of cycles before the next wall
 * inPin          - input pin number
 * LCD            - enable LCD display
 * DEBUG          - enable debug display (visible over USART)
