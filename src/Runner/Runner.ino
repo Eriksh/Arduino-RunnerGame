@@ -6,13 +6,13 @@ int difficulty = 2;
 int min_wall_delay = 4;
 int inPin = 13;
 int debounceDelay = 25;
-int cycleDelayTime = 16000; 
+int refreshTime = 16000; 
 
 //Run on LCD 
 bool LCD = true;
 
 //Set Debug Mode
-bool DEBUG = true;
+bool DEBUG = false;
 
 // GAME VARIABLES
 //////////////////////////////////////////////////////////////////
@@ -269,7 +269,7 @@ void UserInput() {
   //Handle Variables
   lastButtonState = reading;
   counter++;
-  }while(counter < cycleDelayTime/difficulty);
+  }while(counter < refreshTime/difficulty);
 }
 
 // FAILURE SCREEN

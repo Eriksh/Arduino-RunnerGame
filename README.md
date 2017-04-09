@@ -3,8 +3,6 @@ Arduino-RunnerGame
 About
 ---
 This was a quick game I developed on the arduino to familiarize myself with the LCD.
-It is very basic, any movements you make the player do will not be seen until the 
-next refresh cycle.
 
 Installing & Running
 ---
@@ -17,5 +15,7 @@ Game Settings
 * difficulty     - changes game difficulty by decreasing game refresh time
 * min_wall_delay - minimum number of cycles before the next wall
 * inPin          - input pin number
+* debounceDelay  - debounce delay time
+* refreshTime    - game refresh time 
 * LCD            - enable LCD display
 * DEBUG          - enable debug display (visible over USART)
