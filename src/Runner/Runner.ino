@@ -5,12 +5,14 @@
 int difficulty = 2;
 int min_wall_delay = 4;
 int inPin = 13;
+int debounceDelay = 25;
+int cycleDelayTime = 16000; 
 
 //Run on LCD 
 bool LCD = true;
 
 //Set Debug Mode
-bool DEBUG = false;
+bool DEBUG = true;
 
 // GAME VARIABLES
 //////////////////////////////////////////////////////////////////
@@ -96,7 +98,7 @@ void loop() {
   //Display
   Display();
 
-  //Wait For User Input
+  //Wait For User Input & Determine Difficulty
   UserInput();
 
   //Reset Delay
@@ -224,13 +226,11 @@ void UserInput() {
 
   //Input Variables
   int counter = 0;
-  int inputTime = 1000;
 
   //Debounce Variables
   int buttonState;
   int lastButtonState = LOW;
   int lastDebounceTime = 0;
-  int debounceDelay = 100; 
 
   do{
     //Read Input
@@ -253,12 +253,14 @@ void UserInput() {
             player_location = 1;
             level[0][0] = objectID[0];
             level[1][0] = objectID[2];
+            Display();
           }
           else{
             Collision_Check(1);
             player_location = 0;
             level[0][0] = objectID[2];
             level[1][0] = objectID[0];
+            Display();
           }
         }
       }
@@ -267,8 +269,7 @@ void UserInput() {
   //Handle Variables
   lastButtonState = reading;
   counter++;
-  delay(1);
-  }while(counter < inputTime/difficulty);
+  }while(counter < cycleDelayTime/difficulty);
 }
 
 // FAILURE SCREEN
